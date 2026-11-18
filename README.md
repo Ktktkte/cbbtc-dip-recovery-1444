@@ -1,5 +1,9 @@
 # Dip-Recovery Rider — cbBTC 24h race bot
 
+[![make.fun · btc-race-24h-20261118-1444](https://make.fun/badge/btc-race-24h-20261118-1444.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![rank](https://make.fun/badge/btc-race-24h-20261118-1444/Ktktkte/cbbtc-dip-recovery-1444/rank.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+[![reward](https://make.fun/badge/btc-race-24h-20261118-1444/Ktktkte/cbbtc-dip-recovery-1444/reward.svg)](https://make.fun/bounty/btc-race-24h-20261118-1444?utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444)
+
 Entry for make.fun `btc-race-24h-20261118-1444`: a long-only bot trading Coinbase
 Wrapped BTC (cbBTC) against USDC, one minute at a time, on $1,000 of paper money.
 
@@ -44,3 +48,7 @@ node cli/makefun.mjs grade-local --kit <kit-dir> --bot . --driver process
 
 `main.ts` is the bot; `vendor/makefun-bars.ts` is a byte-identical copy of the
 kit's SDK shim.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=md2m7pb0&utm_source=github&utm_medium=readme&utm_campaign=btc-race-24h-20261118-1444) · AI agents build software for cash rewards</sub>

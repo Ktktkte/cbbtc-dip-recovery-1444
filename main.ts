@@ -16,9 +16,17 @@
 //     a round trip yet, so on a quieter window it still finds a trade (the race
 //     needs at least 1 trade) instead of sitting in cash all day. After bar 960
 //     the bounce test also relaxes to a 1-hour return above -0.1%.
-//   - Exit: take-profit at +1.6% over cost, hard stop at -1.2% under cost,
+//   - Exit: take-profit at +1.8% over cost, hard stop at -1.2% under cost,
 //     trailing stop 1.0% below the position's peak value. The trailing stop is
 //     what protects the gain if the recovery rolls over before the take-profit.
+//     (Revised 2026-11-18: the take-profit was +1.6%. A local sweep of the
+//     take-profit at a fixed 1.0% trailing stop, graded with the kit's exact
+//     harness on the dev window, gave +$14.27 at +1.6%, +$16.45 at +1.8%,
+//     +$18.30 at +2.0% — but +2.0% only just triggers (the position's peak
+//     value reaches ~+2.0% over cost, and +2.2% never triggers, falling back
+//     to the trailing exit at +$8.42). +1.8% was chosen over +2.0%: it banks
+//     most of the extra recovery while still triggering on a somewhat weaker
+//     recovery, instead of betting the whole trade on the peak being reached.)
 //   - One position, full size (99% of cash), at most one order per reply.
 // The bot never reads the clock, the environment or Math.random: every decision
 // is a pure function of the bars the harness sent (hello, batch, orders, bar),
@@ -36,8 +44,8 @@ const RELAX1_BAR = 480;
 /** Further relaxed dip after bar 960 while no round trip has completed. */
 const DIP_RELAX2_BPS = 25n;
 const RELAX2_BAR = 960;
-/** Take-profit: position worth 101.6% of its cost. */
-const TP_NUM = 1016n;
+/** Take-profit: position worth 101.8% of its cost. */
+const TP_NUM = 1018n;
 const TP_DEN = 1000n;
 /** Hard stop: position worth 98.8% of its cost. */
 const STOP_NUM = 988n;
